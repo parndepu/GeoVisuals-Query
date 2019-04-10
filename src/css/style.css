@@ -1,0 +1,42 @@
+/* main html body */
+@import url('https://fonts:googleapis.com/css?family=Lato');
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+}
+
+/* map */
+#map-container {
+    width: 70%;
+    height: 100%;
+    float: left;
+    background: #252525;
+    padding: 5px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 2px solid #525252;
+}
+
+/* output console */
+#output-container {
+    width: 25%;
+    height: 100%;
+    float: left;
+    background: #252525;
+    overflow: hidden;
+    padding: 5px
+}
+
+#output {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
