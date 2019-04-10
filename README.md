@@ -1,5 +1,5 @@
 ## GeoVisuals-Query
-Simple segmentation of spatial and video query
+Simple query of spatial and video segmentation using R-Tree (C++ backends)
 
 ### Setup
 ```
@@ -7,8 +7,8 @@ npm install
 npm run buildDev
 ```
 
-### Start
+### Run
 ```
 npm start
 ```
-Access web server at http://localhost:3000
+Web server deployed at http://localhost:3000
