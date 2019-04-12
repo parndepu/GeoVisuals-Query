@@ -34,6 +34,29 @@ $(window).on('load', function () {
     Map_add_draw_control(leaflet_map, 'topleft');
     Map_add_overlay_layer(leaflet_layer_control, Map_layers.draw, 'draw');
 
+    // Calculate bounding box of line string
+    var line = turf.lineString([[-74, 40], [-78, 42], [-82, 30]]);
+    var bbox = turf.bbox(line);
+    var bboxPolygon = turf.bboxPolygon(bbox);
+    //console.log(bboxPolygon);
+    // Add geojson layer to the leaflet map
+    var geojson_layer = L.geoJSON().addTo(leaflet_map);
+
+    // Add data to geojson layer
+    geojson_layer.addData(line);
+    geojson_layer.addData(bboxPolygon);
+
+    // Geojson style
+    var geojson_style = {
+        "color": "red",
+        "weight": 5,
+        "opacity": 0.5
+    };
+
+    geojson_layer.setStyle(geojson_style);
+    leaflet_map.flyToBounds(geojson_layer.getBounds());
+
+
     // Set up drawing events 
     // TODO: move this to map components
     leaflet_map.on(L.Draw.Event.CREATED, function (event) {
@@ -42,5 +65,5 @@ $(window).on('load', function () {
     });
 
     return;
-    
+
 });

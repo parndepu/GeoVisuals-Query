@@ -21,12 +21,14 @@ module.exports = {
     devtool: '#source-map',
 
     module: {
+
         rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             },
+
             {
                 // Loads javascript into html template
                 // Entry point is set below
@@ -36,16 +38,19 @@ module.exports = {
                     // options: { minimize: true }
                 }]
             },
+
             {
                 test: /\.css$/,
                 use: [ 'style-loader', 'css-loader' ]
             },
+
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [ 'file-loader' ]
             }
         ]
     },
+
     plugins: [
         new htmlWebpackPlugin({
             template: './src/html/index.html',
@@ -55,7 +60,8 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-            L: 'leaflet'
+            L: 'leaflet',
+            turf: '@turf/turf'
         }),
         new webpack.NoEmitOnErrorsPlugin()
     ]

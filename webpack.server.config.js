@@ -40,6 +40,17 @@ module.exports = (env, argv) => {
                     use: {
                         loader: 'babel-loader'
                     }
+                },
+
+                // Node loader for native module
+                { 
+                    test: /\.node$/,
+                    use: {
+                        loader: 'native-ext-loader',
+                        options: {
+                            rewritePath: path.resolve(__dirname, "dist")
+                        }
+                    }
                 }
             ]
         }

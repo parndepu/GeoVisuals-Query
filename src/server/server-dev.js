@@ -8,6 +8,10 @@ import config from '../../webpack.dev.config';
 import routes from './routes/router';
 import bodyParser from 'body-parser';
 
+
+const testAddon = require('../../build/Release/hello.node');
+console.log('addon: ', testAddon.tricky("hello"));
+
 // Initialize webpack
 const app = express(),
             DIST_DIR = __dirname,

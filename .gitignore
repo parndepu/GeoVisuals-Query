@@ -10,3 +10,7 @@ node_modules
 resources
 # Ignore package-lock file
 package-lock
+# Log file
+*.Log
+# Build directory
+build

@@ -4,7 +4,9 @@
     "description": "Simple segmentation of spatial and video query using R-Tree",
     "scripts": {
         "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
-        "start": "node ./dist/server.js"
+        "start": "node ./dist/server.js",
+        "build": "node-gyp rebuild",
+        "clean": "node-gyp clean"
     },
     "keywords": [
         "geovisuals",
@@ -15,11 +17,13 @@
     "author": "Suphanut Jamonnak",
     "license": "MIT",
     "dependencies": {
+        "@turf/turf": "^5.1.6",
         "body-parser": "^1.18.3",
         "express": "^4.16.4",
         "jquery": "^3.3.1",
         "leaflet": "^1.3.4",
         "leaflet-draw": "^1.0.4",
+        "node-addon-api": "^1.6.3",
         "stemmer": "^1.0.3"
     },
     "devDependencies": {
@@ -31,6 +35,8 @@
         "html-loader": "^0.5.5",
         "html-webpack-plugin": "^3.2.0",
         "mini-css-extract-plugin": "^0.4.4",
+        "native-ext-loader": "^2.3.0",
+        "node-gyp": "^3.8.0",
         "optimize-css-assets-webpack-plugin": "^5.0.1",
         "style-loader": "^0.23.1",
         "uglifyjs-webpack-plugin": "^2.0.1",
